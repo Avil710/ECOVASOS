@@ -1,6 +1,4 @@
-
-    
-         <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
@@ -32,7 +30,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Menú */
+        /* --- MENÚ MODERNO & MÓVIL --- */
         nav {
             background: #ffffff;
             padding: 12px 20px;
@@ -66,7 +64,7 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
-        /* Menú móvil */
+        /* Botón hamburguesa */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -81,6 +79,7 @@
             border-radius: 5px;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
             .menu-links {
                 position: absolute;
@@ -119,7 +118,6 @@
             to { opacity: 1; }
         }
 
-        /* Caja de imágenes (se ajustan solas) */
         .img-placeholder {
             width: 100%;
             height: 220px;
@@ -130,14 +128,15 @@
             align-items: center;
             justify-content: center;
             margin: 20px 0;
-            overflow: hidden;
+            color: #4a6a52;
+            font-style: italic;
+            transition: 0.3s;
+            overflow: hidden; /* para evitar desbordes */
         }
 
-        .img-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 12px;
+        .img-placeholder:hover {
+            background: #cbe1ce;
+            transform: scale(1.02);
         }
 
         footer {
@@ -147,6 +146,15 @@
             padding: 25px;
             margin-top: 60px;
         }
+
+        /* ---- AJUSTE AUTOMÁTICO DE IMÁGENES ---- */
+        .img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
     </style>
 
 </head>
@@ -173,96 +181,98 @@
 
 <section id="sostenibilidad">
     <h2>¿Qué es la Sostenibilidad?</h2>
-    <div class="img-placeholder">
-        <img src="imagen1.jpg" alt="">
-    </div>
+    <div class="img-placeholder"><img src="sostenibilidad.jpg" alt=""></div>
     <p>
-        La sostenibilidad es la capacidad de satisfacer las necesidades actuales sin afectar a las futuras generaciones...
+        La sostenibilidad es la capacidad de satisfacer las necesidades actuales sin comprometer los recursos
+        y posibilidades de las futuras generaciones. Implica un equilibrio entre el cuidado ambiental,
+        el desarrollo económico y el bienestar social.
     </p>
 </section>
 
 <section id="tipos">
     <h2>Tipos de Vasos y Platos</h2>
-    <div class="img-placeholder">
-        <img src="sarahcreates-4M9nbpnnX_o-unsplash.jpg" alt="">
-    </div>
+    <div class="img-placeholder"><img src="sarahcreates-4M9nbpnnX_o-unsplash.jpg" alt=""></div>
     <p>
-        Existen diferentes tipos de vasos y platos según su impacto ambiental:
+        Los vasos y platos se clasifican principalmente según su uso...
     </p>
     <ul>
-        <li><strong>Desechables:</strong> baratos pero muy contaminantes.</li>
-        <li><strong>Reutilizables:</strong> reducen el impacto a largo plazo.</li>
-        <li><strong>Biodegradables:</strong> se descomponen naturalmente.</li>
-        <li><strong>Compostables:</strong> se integran en composta industrial.</li>
+        <li><strong>Desechables:</strong> Generalmente hechos de plástico o unicel...</li>
+        <li><strong>Reutilizables:</strong> Fabricados de vidrio, acero inoxidable...</li>
+        <li><strong>Biodegradables:</strong> Elaborados con materiales orgánicos...</li>
+        <li><strong>Compostables:</strong> Se degradan en composta industrial...</li>
+        <li><strong>Sustentables:</strong> Diseñados para minimizar su impacto...</li>
     </ul>
 </section>
 
 <section id="productos-sustentables">
     <h2>Tipos de Productos Sustentables</h2>
-    <div class="img-placeholder">
-        <img src="sarahcreates-4M9nbpnnX_o-unsplash.jpg" alt="">
-    </div>
-    <p>Los productos sustentables incluyen:</p>
+    <div class="img-placeholder"><img src="premium_photo-1726736439455-69c78472ec51.avif" alt=""></div>
+    <p>
+        Los productos sustentables están diseñados para reducir su impacto ambiental...
+    </p>
     <ul>
-        <li>Biodegradables</li>
-        <li>Compostables</li>
-        <li>Reutilizables</li>
-        <li>Reciclados</li>
+        <li>Productos biodegradables</li>
+        <li>Materiales compostables</li>
+        <li>Vasos y platos reutilizables</li>
+        <li>Materiales reciclados</li>
     </ul>
 </section>
 
 <section id="materiales">
     <h2>Materiales Comunes</h2>
-    <div class="img-placeholder">
-        <img src="imagen4.jpg" alt="">
-    </div>
+    <div class="img-placeholder"><img src="materiales.jpg" alt=""></div>
     <p>
-        Los materiales más comunes incluyen:
+        La elección del material determina la durabilidad...
     </p>
     <ul>
-        <li><strong>Plástico PET:</strong> resistente pero contaminante.</li>
-        <li><strong>Papel y cartón:</strong> reciclables pero requieren recursos.</li>
-        <li><strong>Vidrio:</strong> 100% reciclable.</li>
-        <li><strong>Bambú:</strong> biodegradable y ecológico.</li>
+        <li><strong>Plástico PET y PP:</strong> Resistentes y económicos...</li>
+        <li><strong>Papel y cartón:</strong> Más fáciles de reciclar...</li>
+        <li><strong>Vidrio:</strong> Totalmente reciclable...</li>
+        <li><strong>Cerámica:</strong> Muy resistente...</li>
+        <li><strong>Bagazo de caña y bambú:</strong> Alternativas biodegradables...</li>
     </ul>
 </section>
 
 <section id="huella">
-    <h2>Huella de Carbono</h2>
-    <div class="img-placeholder">
-        <img src="imagen5.jpg" alt="">
-    </div>
+    <h2>Huella de Carbono de Vasos y Platos</h2>
+    <div class="img-placeholder"><img src="huella.jpg" alt=""></div>
     <p>
-        La huella de carbono se refiere a los gases emitidos en la producción, transporte y desecho de los productos.
+        La huella de carbono mide la cantidad de gases emitidos durante la fabricación...
     </p>
+    <ul>
+        <li><strong>Plástico:</strong> Elevada huella por uso de petróleo...</li>
+        <li><strong>Papel y cartón:</strong> Huella moderada...</li>
+        <li><strong>Vidrio:</strong> Alta energía en su producción...</li>
+        <li><strong>Biodegradables:</strong> Menor huella si se composta...</li>
+    </ul>
 </section>
 
 <section id="evitar-desechables">
     <h2>¿Por qué evitar desechables?</h2>
-    <div class="img-placeholder">
-        <img src="imagen6.jpg" alt="">
-    </div>
+    <div class="img-placeholder"><img src="desechables.jpg" alt=""></div>
     <p>
-        Los desechables generan toneladas de basura y aumentan la contaminación global.
+        Los desechables generan toneladas de residuos cada año...
     </p>
 </section>
 
 <section id="recomendaciones">
-    <h2>Recomendaciones</h2>
-    <div class="img-placeholder">
-        <img src="imagen7.jpg" alt="">
-    </div>
+    <h2>Recomendaciones para Reducir el Impacto</h2>
+    <div class="img-placeholder"><img src="recomendaciones.jpg" alt=""></div>
+    <p>
+        Para disminuir la contaminación y la huella de carbono:
+    </p>
     <ul>
-        <li>Usar productos reutilizables</li>
-        <li>Separar residuos</li>
-        <li>Elegir materiales biodegradables</li>
-        <li>Evitar compras innecesarias</li>
+        <li>Utiliza productos reutilizables...</li>
+        <li>Evita los desechables...</li>
+        <li>Separa residuos correctamente...</li>
+        <li>Elige materiales biodegradables...</li>
+        <li>Reduce el consumo impulsivo...</li>
     </ul>
 </section>
 
 <section id="video">
     <h2>Video Informativo</h2>
-    <p>Aquí puedes agregar tu video MP4:</p>
+    <p>Este espacio es para insertar un video MP4 ligero (5–20 MB) que explique tu tema.</p>
     <video controls width="100%">
         <source src="video.mp4" type="video/mp4">
         Tu navegador no soporta el elemento de video.
@@ -270,11 +280,13 @@
 </section>
 
 <section id="referencias">
-    <h2>Referencias</h2>
+    <h2>Referencias y Fuentes</h2>
     <ul>
-        <li>ONU – Desarrollo Sostenible</li>
-        <li>EPA – Impacto Ambiental</li>
-        <li>Greenpeace – Plásticos</li>
+        <li><a href="https://www.un.org/sustainabledevelopment/es/" target="_blank">ONU – ODS</a></li>
+        <li><a href="https://www.epa.gov" target="_blank">EPA – Environmental Protection Agency</a></li>
+        <li><a href="https://www.greenpeace.org" target="_blank">Greenpeace – Impacto Ambiental</a></li>
+        <li><a href="https://www.nature.com" target="_blank">Nature – Estudios ecológicos</a></li>
+        <li><a href="https://www.sciencedirect.com" target="_blank">ScienceDirect – Investigación científica</a></li>
     </ul>
 </section>
 
@@ -284,3 +296,8 @@
 
 </body>
 </html>
+
+   
+
+  
+  
