@@ -6,70 +6,144 @@
     <title>Vasos y Platos - Información</title>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Poppins", sans-serif;
             margin: 0;
             padding: 0;
-            background: #f3f3f3;
-            color: #222;
+            background: #f0f7f1;
+            color: #1f3d2e;
+            scroll-behavior: smooth;
         }
 
         header {
-            background: linear-gradient(135deg, #4ca1af, #c4e0e5);
-            padding: 30px;
+            background: linear-gradient(135deg, #6bbf59, #3c8d40);
+            padding: 60px 20px;
             text-align: center;
             color: white;
+            animation: fadeDown 1s ease;
         }
 
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- MENÚ MODERNO & MÓVIL --- */
         nav {
             background: #ffffff;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 12px 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-links {
+            display: flex;
+            gap: 20px;
         }
 
         nav a {
-            margin: 0 15px;
             text-decoration: none;
-            color: #4b4b4b;
-            font-weight: bold;
+            color: #2e5237;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #6bbf59;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Botón hamburguesa */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: #2e5237;
+            border-radius: 5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-links {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background: white;
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                display: none;
+                padding: 15px 0;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            }
+
+            .menu-links.open {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
         }
 
         section {
             max-width: 1000px;
             margin: 40px auto;
-            padding: 25px;
+            padding: 30px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease;
         }
 
-        section h2 {
-            margin-top: 0;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .img-placeholder {
             width: 100%;
-            height: 200px;
-            background: #d9d9d9;
-            border: 2px dashed #999;
+            height: 220px;
+            background: #dce9dd;
+            border: 2px dashed #6b8570;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 20px 0;
-            color: #555;
+            color: #4a6a52;
             font-style: italic;
+            transition: 0.3s;
+        }
+
+        .img-placeholder:hover {
+            background: #cbe1ce;
+            transform: scale(1.02);
         }
 
         footer {
-            background: #333;
+            background: #23432f;
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 50px;
+            padding: 25px;
+            margin-top: 60px;
         }
     </style>
 
@@ -82,11 +156,19 @@
 </header>
 
 <nav>
-    <a href="#tipos">Tipos</a>
-    <a href="#materiales">Materiales</a>
-    <a href="#huella">Huella de Carbono</a>
-    <a href="#recomendaciones">Recomendaciones</a>
-</nav>
+        <div class="logo">🌿 ECOVASOS</div>
+        <div class="hamburger" onclick="document.querySelector('.menu-links').classList.toggle('open')">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu-links">
+            <a href="#tipos">Tipos</a>
+            <a href="#materiales">Materiales</a>
+            <a href="#huella">Huella de Carbono</a>
+            <a href="#recomendaciones">Recomendaciones</a>
+        </div>
+    </nav>
 
 <section id="tipos">
     <h2>Tipos de Vasos y Platos</h2>
