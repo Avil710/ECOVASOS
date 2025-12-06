@@ -1,0 +1,116 @@
+/* PALETA ECOLÓGICA */
+:root {
+    --verde-oscuro: #2E7D32;
+    --verde-claro: #A5D6A7;
+    --crema: #F1F8E9;
+    --texto: #1B1B1B;
+}
+
+/* RESET */
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: var(--crema);
+    color: var(--texto);
+}
+
+/* NAVBAR */
+.navbar {
+    background: var(--verde-oscuro);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--verde-claro);
+}
+
+/* MENÚ MÓVIL */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 22px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--verde-oscuro);
+        padding: 15px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+/* SECCIONES */
+.section {
+    padding: 40px;
+    margin: 20px;
+    background: white;
+    border-radius: 12px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* ANIMACIÓN */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* IMÁGENES – TAMAÑO FIJO BONITO */
+.img-placeholder {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--verde-oscuro);
+    color: white;
+    margin-top: 30px;
+}
