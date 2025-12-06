@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+
+    
+         <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
@@ -30,7 +32,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- MENÚ MODERNO & MÓVIL --- */
+        /* Menú */
         nav {
             background: #ffffff;
             padding: 12px 20px;
@@ -64,7 +66,7 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
-        /* Botón hamburguesa */
+        /* Menú móvil */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -79,7 +81,6 @@
             border-radius: 5px;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .menu-links {
                 position: absolute;
@@ -118,6 +119,7 @@
             to { opacity: 1; }
         }
 
+        /* Caja de imágenes (se ajustan solas) */
         .img-placeholder {
             width: 100%;
             height: 220px;
@@ -128,14 +130,14 @@
             align-items: center;
             justify-content: center;
             margin: 20px 0;
-            color: #4a6a52;
-            font-style: italic;
-            transition: 0.3s;
+            overflow: hidden;
         }
 
-        .img-placeholder:hover {
-            background: #cbe1ce;
-            transform: scale(1.02);
+        .img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
         }
 
         footer {
@@ -156,129 +158,111 @@
 </header>
 
 <nav>
-        <div class="logo">🌿 ECOVASOS</div>
-        <div class="hamburger" onclick="document.querySelector('.menu-links').classList.toggle('open')">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="menu-links">
-            <a href="#tipos">Tipos</a>
-            <a href="#materiales">Materiales</a>
-            <a href="#huella">Huella de Carbono</a>
-            <a href="#recomendaciones">Recomendaciones</a>
-            <a href="#referencias">Referencias</a>
-        </div>
-    </nav>
+    <div class="logo">🌿 ECOVASOS</div>
+    <div class="hamburger" onclick="document.querySelector('.menu-links').classList.toggle('open')">
+        <div></div><div></div><div></div>
+    </div>
+    <div class="menu-links">
+        <a href="#tipos">Tipos</a>
+        <a href="#materiales">Materiales</a>
+        <a href="#huella">Huella de Carbono</a>
+        <a href="#recomendaciones">Recomendaciones</a>
+        <a href="#referencias">Referencias</a>
+    </div>
+</nav>
 
 <section id="sostenibilidad">
     <h2>¿Qué es la Sostenibilidad?</h2>
-    <div class="img-placeholder">Imagen sobre sostenibilidad</div>
+    <div class="img-placeholder">
+        <img src="imagen1.jpg" alt="">
+    </div>
     <p>
-        La sostenibilidad es la capacidad de satisfacer las necesidades actuales sin comprometer los recursos
-        y posibilidades de las futuras generaciones. Implica un equilibrio entre el cuidado ambiental,
-        el desarrollo económico y el bienestar social.
+        La sostenibilidad es la capacidad de satisfacer las necesidades actuales sin afectar a las futuras generaciones...
     </p>
 </section>
 
 <section id="tipos">
     <h2>Tipos de Vasos y Platos</h2>
     <div class="img-placeholder">
-    <img src="sarahcreates-4M9nbpnnX_o-unsplash.jpg" alt="Imagen sobre sostenibilidad" style="width:50%; border-radius:8px;">
-</div>
-
-
+        <img src="sarahcreates-4M9nbpnnX_o-unsplash.jpg" alt="">
+    </div>
     <p>
-        Los vasos y platos se clasifican principalmente según su uso y su impacto ambiental. Los más comunes son:
+        Existen diferentes tipos de vasos y platos según su impacto ambiental:
     </p>
     <ul>
-        <li><strong>Desechables:</strong> Generalmente hechos de plástico o unicel. Son económicos, pero generan gran cantidad de residuos no biodegradables.</li>
-        <li><strong>Reutilizables:</strong> Fabricados de vidrio, acero inoxidable, cerámica o plásticos duros. Reducen el impacto ambiental a largo plazo.</li>
-        <li><strong>Biodegradables:</strong> Elaborados con materiales orgánicos como fécula de maíz, bagazo de caña o bambú. Se degradan naturalmente.</li>
-        <li><strong>Compostables:</strong> Pueden desintegrarse en composta industrial, regresando nutrientes al suelo.</li>
-        <li><strong>Sustentables:</strong> Diseñados para minimizar la huella ambiental durante todo su ciclo de vida.</li>
+        <li><strong>Desechables:</strong> baratos pero muy contaminantes.</li>
+        <li><strong>Reutilizables:</strong> reducen el impacto a largo plazo.</li>
+        <li><strong>Biodegradables:</strong> se descomponen naturalmente.</li>
+        <li><strong>Compostables:</strong> se integran en composta industrial.</li>
     </ul>
 </section>
 
 <section id="productos-sustentables">
     <h2>Tipos de Productos Sustentables</h2>
-    <div class="img-placeholder">Imagen de productos sustentables</div>
-    <p>Los productos sustentables están diseñados para reducir su impacto ambiental. Algunos incluyen:</p>
+    <div class="img-placeholder">
+        <img src="imagen3.jpg" alt="">
+    </div>
+    <p>Los productos sustentables incluyen:</p>
     <ul>
-        <li>Productos biodegradables</li>
-        <li>Materiales compostables</li>
-        <li>Vasos y platos reutilizables</li>
-        <li>Materiales reciclados</li>
+        <li>Biodegradables</li>
+        <li>Compostables</li>
+        <li>Reutilizables</li>
+        <li>Reciclados</li>
     </ul>
 </section>
 
 <section id="materiales">
     <h2>Materiales Comunes</h2>
-    <div class="img-placeholder">Aquí va otra imagen</div>
+    <div class="img-placeholder">
+        <img src="imagen4.jpg" alt="">
+    </div>
     <p>
-        La elección del material determina la durabilidad, capacidad de reciclaje y el impacto ecológico. Entre los materiales más utilizados están:
+        Los materiales más comunes incluyen:
     </p>
     <ul>
-        <li><strong>Plástico PET y PP:</strong> Resistentes y económicos, pero tardan décadas en degradarse.</li>
-        <li><strong>Papel y cartón:</strong> Más fáciles de reciclar, pero requieren recursos como agua y madera.</li>
-        <li><strong>Vidrio:</strong> Totalmente reciclable y muy duradero, aunque su fabricación requiere mucha energía.</li>
-        <li><strong>Cerámica:</strong> Muy resistente y perfecta para usos múltiples en el hogar.</li>
-        <li><strong>Bagazo de caña y bambú:</strong> Alternativas biodegradables con bajo impacto ambiental.</li>
+        <li><strong>Plástico PET:</strong> resistente pero contaminante.</li>
+        <li><strong>Papel y cartón:</strong> reciclables pero requieren recursos.</li>
+        <li><strong>Vidrio:</strong> 100% reciclable.</li>
+        <li><strong>Bambú:</strong> biodegradable y ecológico.</li>
     </ul>
 </section>
 
 <section id="huella">
-    <h2>Huella de Carbono de Vasos y Platos</h2>
-    <div class="img-placeholder">Espacio para gráfica o imagen</div>
+    <h2>Huella de Carbono</h2>
+    <div class="img-placeholder">
+        <img src="imagen5.jpg" alt="">
+    </div>
     <p>
-        La huella de carbono mide la cantidad de gases de efecto invernadero generados durante la fabricación, transporte, uso y desecho de los productos. Algunos ejemplos incluyen:
-    </p>
-    <ul>
-        <li><strong>Plástico:</strong> Elevada huella debido al uso de petróleo y procesos químicos contaminantes.</li>
-        <li><strong>Papel y cartón:</strong> Huella moderada, aunque depende de si proviene de material reciclado.</li>
-        <li><strong>Vidrio:</strong> Alta energía en su producción, pero sostenible si se reutiliza muchas veces.</li>
-        <li><strong>Biodegradables:</strong> Menor huella si se gestionan en sistemas adecuados de composta.</li>
-    </ul>
-    <p>
-        Reducir la huella implica optar por productos reutilizables, materiales renovables y hábitos de consumo responsables.
+        La huella de carbono se refiere a los gases emitidos en la producción, transporte y desecho de los productos.
     </p>
 </section>
 
 <section id="evitar-desechables">
     <h2>¿Por qué evitar desechables?</h2>
-    <div class="img-placeholder">Imagen relacionada</div>
+    <div class="img-placeholder">
+        <img src="imagen6.jpg" alt="">
+    </div>
     <p>
-        Los desechables generan toneladas de residuos cada año y contribuyen significativamente a la
-        contaminación del suelo y los océanos. Además, muchos requieren grandes cantidades de energía y recursos
-        para su producción y transporte.
+        Los desechables generan toneladas de basura y aumentan la contaminación global.
     </p>
 </section>
 
 <section id="recomendaciones">
-    <h2>Recomendaciones para Reducir el Impacto</h2>
-    <div class="img-placeholder">Imagen opcional</div>
-    <p>
-        Para disminuir la contaminación y la huella de carbono, considera las siguientes recomendaciones:
-    </p>
+    <h2>Recomendaciones</h2>
+    <div class="img-placeholder">
+        <img src="imagen7.jpg" alt="">
+    </div>
     <ul>
-        <li>Utiliza productos reutilizables como termos, platos de vidrio y contenedores duraderos.</li>
-        <li>Evita los desechables cuando no sean estrictamente necesarios.</li>
-        <li>Separa los residuos orgánicos, reciclables y no reciclables para facilitar su tratamiento.</li>
-        <li>Elige materiales biodegradables o compostables para eventos y reuniones.</li>
-        <li>Reduce el consumo impulsivo y opta por productos con certificaciones ecológicas.</li>
+        <li>Usar productos reutilizables</li>
+        <li>Separar residuos</li>
+        <li>Elegir materiales biodegradables</li>
+        <li>Evitar compras innecesarias</li>
     </ul>
-    <p>
-        Recordar estas prácticas contribuye a un futuro más sostenible y con menos contaminación.
-    </p>
 </section>
-
-<footer>
-    <p>Página informativa creada para exposición escolar | GitHub Pages</p>
-</footer>
 
 <section id="video">
     <h2>Video Informativo</h2>
-    <p>Este espacio es para insertar un video MP4 ligero (5–20 MB) que expliques tu tema.</p>
+    <p>Aquí puedes agregar tu video MP4:</p>
     <video controls width="100%">
         <source src="video.mp4" type="video/mp4">
         Tu navegador no soporta el elemento de video.
@@ -286,15 +270,17 @@
 </section>
 
 <section id="referencias">
-    <h2>Referencias y Fuentes</h2>
+    <h2>Referencias</h2>
     <ul>
-        <li><a href="https://www.un.org/sustainabledevelopment/es/" target="_blank">ONU – Objetivos de Desarrollo Sostenible</a></li>
-        <li><a href="https://www.epa.gov" target="_blank">EPA – Environmental Protection Agency</a></li>
-        <li><a href="https://www.greenpeace.org" target="_blank">Greenpeace – Impacto Ambiental del Plástico</a></li>
-        <li><a href="https://www.nature.com" target="_blank">Nature – Estudios sobre huella ecológica</a></li>
-        <li><a href="https://www.sciencedirect.com" target="_blank">ScienceDirect – Investigaciones sobre desechables y materiales</a></li>
+        <li>ONU – Desarrollo Sostenible</li>
+        <li>EPA – Impacto Ambiental</li>
+        <li>Greenpeace – Plásticos</li>
     </ul>
 </section>
+
+<footer>
+    <p>Página informativa creada para exposición escolar | GitHub Pages</p>
+</footer>
 
 </body>
 </html>
