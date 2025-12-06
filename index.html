@@ -1,303 +1,158 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vasos y Platos - Información</title>
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-        body {
-            font-family: "Poppins", sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f0f7f1;
-            color: #1f3d2e;
-            scroll-behavior: smooth;
-        }
-
-        header {
-            background: linear-gradient(135deg, #6bbf59, #3c8d40);
-            padding: 60px 20px;
-            text-align: center;
-            color: white;
-            animation: fadeDown 1s ease;
-        }
-
-        @keyframes fadeDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* --- MENÚ MODERNO & MÓVIL --- */
-        nav {
-            background: #ffffff;
-            padding: 12px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .menu-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #2e5237;
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            background: #6bbf59;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
-        /* Botón hamburguesa */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
-
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background: #2e5237;
-            border-radius: 5px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .menu-links {
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background: white;
-                width: 100%;
-                flex-direction: column;
-                text-align: center;
-                display: none;
-                padding: 15px 0;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-            }
-
-            .menu-links.open {
-                display: flex;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-        }
-
-        section {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 30px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            animation: fadeIn 1s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .img-placeholder {
-            width: 100%;
-            height: 220px;
-            background: #dce9dd;
-            border: 2px dashed #6b8570;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 20px 0;
-            color: #4a6a52;
-            font-style: italic;
-            transition: 0.3s;
-            overflow: hidden; /* para evitar desbordes */
-        }
-
-        .img-placeholder:hover {
-            background: #cbe1ce;
-            transform: scale(1.02);
-        }
-
-        footer {
-            background: #23432f;
-            color: white;
-            text-align: center;
-            padding: 25px;
-            margin-top: 60px;
-        }
-
-        /* ---- AJUSTE AUTOMÁTICO DE IMÁGENES ---- */
-        .img-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 12px;
-        }
-
-    </style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoVasos – Información Sustentable</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<header>
-    <h1>Vasos y Platos: Uso Responsable y Sostenibilidad</h1>
-    <p>Información sobre materiales, impacto ambiental y alternativas sustentables</p>
-</header>
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">EcoVasos</div>
 
-<nav>
-    <div class="logo">🌿 ECOVASOS</div>
-    <div class="hamburger" onclick="document.querySelector('.menu-links').classList.toggle('open')">
-        <div></div><div></div><div></div>
-    </div>
-    <div class="menu-links">
-        <a href="#tipos">Tipos</a>
-        <a href="#materiales">Materiales</a>
-        <a href="#huella">Huella de Carbono</a>
-        <a href="#recomendaciones">Recomendaciones</a>
-        <a href="#referencias">Referencias</a>
-    </div>
-</nav>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
-<section id="sostenibilidad">
-    <h2>¿Qué es la Sostenibilidad?</h2>
-    <div class="img-placeholder"><img src="sostenibilidad.jpg" alt=""></div>
-    <p>
-        La sostenibilidad es la capacidad de satisfacer las necesidades actuales sin comprometer los recursos
-        y posibilidades de las futuras generaciones. Implica un equilibrio entre el cuidado ambiental,
-        el desarrollo económico y el bienestar social.
-    </p>
-</section>
+            <ul class="nav-links" id="menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sostenibilidad">Sostenibilidad</a></li>
+                <li><a href="#tipos">Tipos Sustentables</a></li>
+                <li><a href="#evitar">¿Por qué evitar desechables?</a></li>
+                <li><a href="#recomendaciones">Recomendaciones</a></li>
+                <li><a href="#huella">Huella de Carbono</a></li>
+                <li><a href="#referencias">Referencias</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<section id="tipos">
-    <h2>Tipos de Vasos y Platos</h2>
-    <div class="img-placeholder"><img src="sarahcreates-4M9nbpnnX_o-unsplash.jpg" alt=""></div>
-    <p>
-        Los vasos y platos se clasifican principalmente según su uso...
-    </p>
-    <ul>
-        <li><strong>Desechables:</strong> Generalmente hechos de plástico o unicel...</li>
-        <li><strong>Reutilizables:</strong> Fabricados de vidrio, acero inoxidable...</li>
-        <li><strong>Biodegradables:</strong> Elaborados con materiales orgánicos...</li>
-        <li><strong>Compostables:</strong> Se degradan en composta industrial...</li>
-        <li><strong>Sustentables:</strong> Diseñados para minimizar su impacto...</li>
-    </ul>
-</section>
+    <!-- HOME -->
+    <section id="inicio" class="section">
+        <h1>Bienvenido a EcoVasos</h1>
+        <p>
+            Esta página tiene como objetivo informar sobre el impacto ambiental de los vasos y platos, 
+            así como promover alternativas sustentables y mejores prácticas de consumo.
+        </p>
 
-<section id="productos-sustentables">
-    <h2>Tipos de Productos Sustentables</h2>
-    <div class="img-placeholder"><img src="premium_photo-1726736439455-69c78472ec51.avif" alt=""></div>
-    <p>
-        Los productos sustentables están diseñados para reducir su impacto ambiental...
-    </p>
-    <ul>
-        <li>Productos biodegradables</li>
-        <li>Materiales compostables</li>
-        <li>Vasos y platos reutilizables</li>
-        <li>Materiales reciclados</li>
-    </ul>
-</section>
+        <div class="img-placeholder">
+            <img src="imagen1.jpg" alt="Sostenibilidad">
+        </div>
+    </section>
 
-<section id="materiales">
-    <h2>Materiales Comunes</h2>
-    <div class="img-placeholder"><img src="materiales.jpg" alt=""></div>
-    <p>
-        La elección del material determina la durabilidad...
-    </p>
-    <ul>
-        <li><strong>Plástico PET y PP:</strong> Resistentes y económicos...</li>
-        <li><strong>Papel y cartón:</strong> Más fáciles de reciclar...</li>
-        <li><strong>Vidrio:</strong> Totalmente reciclable...</li>
-        <li><strong>Cerámica:</strong> Muy resistente...</li>
-        <li><strong>Bagazo de caña y bambú:</strong> Alternativas biodegradables...</li>
-    </ul>
-</section>
+    <!-- SOSTENIBILIDAD -->
+    <section id="sostenibilidad" class="section">
+        <h2>¿Qué es la Sostenibilidad?</h2>
+        <p>
+            La sostenibilidad es la capacidad de satisfacer las necesidades actuales sin comprometer los 
+            recursos de las futuras generaciones. Esto implica reducir el consumo excesivo, reciclar, 
+            reutilizar, y elegir productos que generen un menor impacto ambiental.
+        </p>
 
-<section id="huella">
-    <h2>Huella de Carbono de Vasos y Platos</h2>
-    <div class="img-placeholder"><img src="huella.jpg" alt=""></div>
-    <p>
-        La huella de carbono mide la cantidad de gases emitidos durante la fabricación...
-    </p>
-    <ul>
-        <li><strong>Plástico:</strong> Elevada huella por uso de petróleo...</li>
-        <li><strong>Papel y cartón:</strong> Huella moderada...</li>
-        <li><strong>Vidrio:</strong> Alta energía en su producción...</li>
-        <li><strong>Biodegradables:</strong> Menor huella si se composta...</li>
-    </ul>
-</section>
+        <div class="img-placeholder">
+            <img src="imagen2.jpg" alt="Naturaleza sostenible">
+        </div>
+    </section>
 
-<section id="evitar-desechables">
-    <h2>¿Por qué evitar desechables?</h2>
-    <div class="img-placeholder"><img src="desechables.jpg" alt=""></div>
-    <p>
-        Los desechables generan toneladas de residuos cada año...
-    </p>
-</section>
+    <!-- TIPOS DE PRODUCTOS SUSTENTABLES -->
+    <section id="tipos" class="section">
+        <h2>Tipos de Productos Sustentables</h2>
+        <p>Algunos materiales que se consideran sustentables para vasos y platos son:</p>
 
-<section id="recomendaciones">
-    <h2>Recomendaciones para Reducir el Impacto</h2>
-    <div class="img-placeholder"><img src="recomendaciones.jpg" alt=""></div>
-    <p>
-        Para disminuir la contaminación y la huella de carbono:
-    </p>
-    <ul>
-        <li>Utiliza productos reutilizables...</li>
-        <li>Evita los desechables...</li>
-        <li>Separa residuos correctamente...</li>
-        <li>Elige materiales biodegradables...</li>
-        <li>Reduce el consumo impulsivo...</li>
-    </ul>
-</section>
+        <ul>
+            <li><strong>Bambú:</strong> Material biodegradable, resistente y renovable.</li>
+            <li><strong>Bagazo de caña:</strong> Subproducto natural que se descompone rápidamente.</li>
+            <li><strong>Plásticos biodegradables:</strong> Se degradan más rápido bajo condiciones específicas.</li>
+            <li><strong>Acero inoxidable:</strong> Reutilizable y durable.</li>
+            <li><strong>Cerámica:</strong> Ideal para uso continuo y sin residuos.</li>
+        </ul>
 
-<section id="video">
-    <h2>Video Informativo</h2>
-    <p>Este espacio es para insertar un video MP4 ligero (5–20 MB) que explique tu tema.</p>
-    <video controls width="100%">
-        <source src="video.mp4" type="video/mp4">
-        Tu navegador no soporta el elemento de video.
-    </video>
-</section>
+        <div class="img-placeholder">
+            <img src="imagen3.jpg" alt="Productos sustentables">
+        </div>
+    </section>
 
-<section id="referencias">
-    <h2>Referencias y Fuentes</h2>
-    <ul>
-        <li><a href="https://www.un.org/sustainabledevelopment/es/" target="_blank">ONU – ODS</a></li>
-        <li><a href="https://www.epa.gov" target="_blank">EPA – Environmental Protection Agency</a></li>
-        <li><a href="https://www.greenpeace.org" target="_blank">Greenpeace – Impacto Ambiental</a></li>
-        <li><a href="https://www.nature.com" target="_blank">Nature – Estudios ecológicos</a></li>
-        <li><a href="https://www.sciencedirect.com" target="_blank">ScienceDirect – Investigación científica</a></li>
-    </ul>
-</section>
+    <!-- EVITAR DESECHABLES -->
+    <section id="evitar" class="section">
+        <h2>¿Por qué evitar los desechables?</h2>
+        <p>
+            Los productos desechables generan grandes cantidades de basura que tardan años en degradarse. Además:
+        </p>
 
-<footer>
-    <p>Página informativa creada para exposición escolar | GitHub Pages</p>
-</footer>
+        <ul>
+            <li>Contribuyen a la contaminación de océanos y ecosistemas.</li>
+            <li>Incrementan la necesidad de extracción de recursos naturales.</li>
+            <li>Generan emisiones de CO₂ durante su producción y transporte.</li>
+        </ul>
+
+        <div class="img-placeholder">
+            <img src="imagen4.jpg" alt="Desechables contaminantes">
+        </div>
+    </section>
+
+    <!-- RECOMENDACIONES -->
+    <section id="recomendaciones" class="section">
+        <h2>Recomendaciones</h2>
+        <p>Para reducir tu huella ambiental puedes:</p>
+
+        <ul>
+            <li>Usar vasos y platos reutilizables siempre que sea posible.</li>
+            <li>Elegir materiales biodegradables o compostables.</li>
+            <li>Evitar los plásticos de un solo uso.</li>
+            <li>Buscar certificaciones ecológicas en los productos.</li>
+        </ul>
+
+        <div class="img-placeholder">
+            <img src="imagen5.jpg" alt="Recomendaciones ecológicas">
+        </div>
+    </section>
+
+    <!-- HUELLA DE CARBONO -->
+    <section id="huella" class="section">
+        <h2>Huella de Carbono</h2>
+        <p>
+            La producción de vasos y platos desechables implica emisiones de gases de efecto invernadero. 
+            Cada fase del proceso —extracción de materiales, fabricación, transporte y desecho— contribuye 
+            al calentamiento global.
+        </p>
+
+        <div class="img-placeholder">
+            <img src="imagen6.jpg" alt="Huella de carbono">
+        </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="section">
+        <h2>Video Informativo</h2>
+        <p>Puedes descargar un video sobre sostenibilidad y subirlo como <strong>video.mp4</strong>.</p>
+
+        <video controls width="100%">
+            <source src="video.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+    </section>
+
+    <!-- REFERENCIAS -->
+    <section id="referencias" class="section">
+        <h2>Referencias</h2>
+        <ul>
+            <li>ONU Medio Ambiente – Reportes sobre contaminación plástica.</li>
+            <li>Greenpeace – Impacto de plásticos de un solo uso.</li>
+            <li>WWF – Sostenibilidad y cambio climático.</li>
+            <li>EcoInvent – Bases de datos de huella de carbono.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2025 EcoVasos – Proyecto Informativo</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("active");
+        }
+    </script>
 
 </body>
 </html>
-
-   
-
-  
-  
